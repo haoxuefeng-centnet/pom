@@ -10,6 +10,7 @@ import java.util.List;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -53,7 +54,7 @@ public class Car implements Serializable{
 	/**
 	 * 车辆颜色
 	 */
-	@NotNull(message = "车身颜色不能为空")
+	//@NotNull(message = "车身颜色不能为空")
 	private String carColor;
 	
 	/**
@@ -66,7 +67,8 @@ public class Car implements Serializable{
 	 * 初次上牌时间
 	 */
 	@NotNull(message = "初次上牌时间不能为空")
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	//@DateTimeFormat(pattern = "yyyy-MM")
+	@JSONField(format = "yyyy-MM")
 	private Date carOldBoadTime;
 	
 	/**
@@ -84,13 +86,13 @@ public class Car implements Serializable{
 	/**
 	 * 出厂日期
 	 */
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM")
 	private Date carFactoryTime;
 	
 	/**
 	 * 车检到期日期
 	 */
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM")
 	private Date carMaturityTime;
 	
 	/**
@@ -106,7 +108,7 @@ public class Car implements Serializable{
 	/**
 	 * 车辆归属市
 	 */
-	@NotNull(message = "车辆归属市不能为空")
+	//@NotNull(message = "车辆归属市不能为空")
 	private String cityLocation;
 	
 	/**
@@ -117,7 +119,7 @@ public class Car implements Serializable{
 	/**
 	 * 车辆归属市
 	 */
-	@NotNull(message = "车辆所在市不能为空")
+	//@NotNull(message = "车辆所在市不能为空")
 	private String cityAttribution;
 	
 	/**
